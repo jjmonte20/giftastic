@@ -1,7 +1,6 @@
 // Need variable for api key
 var superheroes = ["Black Panther", "Captain America", "Doctor Strange"];
 
-var apiKey = "v5aVceo4WjHoGLoPp1V4edftSHyhJnhI";
 var gurl = "http://api.giphy.com/v1/gifs/search?q="
 // query url and search term
 function renderButtons() {
@@ -28,13 +27,38 @@ $(".extendedUniverse").on("click", '.superhero', function(){
     var name = $(this).attr("data-name");
     name = name.replace(/\s/g,"+")
     console.log(name);
-        var queryURL = gurl + ($(this).attr("data-name")) + "&apikey=" + apiKey;
+        var queryURL = gurl + ($(this).attr("data-name")) + "&api_key=v5aVceo4WjHoGLoPp1V4edftSHyhJnhI&limit=10";
 
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function(response){
-            $(".gifRating").html(response.data[0].rating);
+
+            // store the gifs in a variable
+            var results = response.data;
+
+            // lets get a result for each item
+            for (var i = 0; i < results.length; i++) {
+                var gifDiv = $("<div>");
+
+                //store the results rating
+                var rating = results[i].rating;
+
+                //let the ppl know the rating of the result
+                var p = $("<p>").text("Rating: " + rating);
+
+                //create an image
+                var heroImg = $("<img>");
+
+                // give the image tag a source pulled from the result item
+                heroImg.attr("src", results[i].images.fixed_height.url);
+
+                //now to add the gifs
+                gifDiv.append(p);
+                gifDiv.append(heroImg);
+
+                $(".gifLocation").prepend(gifDiv);
+            }
             console.log(response);
         })
 })
