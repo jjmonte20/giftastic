@@ -33,6 +33,15 @@ h1 {
 }
 
 text, p, label {
-    font-family: 'Bangers', cursive;
-    
+    font-family: 'Bangers', cursive;  
+}
+
+label {
+    margin-right: 1%;
+    font-size: 1.5em;
+}
+
+#findHero {
+    margin-top: 1%;
+    margin-bottom: 1%;
 }

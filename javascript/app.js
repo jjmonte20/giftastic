@@ -99,6 +99,8 @@ $("#findHero").on("click", function(event){
     // adding to the superhero directory
     superheroes.push(hero);
 
+    $("#superheroInput").val("");
+
     // call the renderbutton function to display the list of heros
     renderButtons();
 });
