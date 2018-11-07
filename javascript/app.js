@@ -89,6 +89,7 @@ $(document.body).on("click", ".gif", function(){
     }
 });
 
+// have find hero button work
 $("#findHero").on("click", function(event){
     // can't have superhero clones
     event.preventDefault();
