@@ -1,7 +1,7 @@
 // Need variable for api key
 var superheroes = ["Black Panther", "Captain America", "Doctor Strange"];
 
-var gurl = "http://api.giphy.com/v1/gifs/search?q=";
+var gurl = "https://cors-ut-bootcamp.herokuapp.com/https://api.giphy.com/v1/gifs/search?q=";
 // query url and search term
 function renderButtons() {
 
