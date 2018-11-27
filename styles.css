@@ -45,3 +45,25 @@ label {
     margin-top: 1%;
     margin-bottom: 1%;
 }
+
+@media only screen and (max-width: 1000px) {
+    html, body {
+        min-height: 100%;
+        background-repeat: repeat;
+    }
+    .gifLocation {
+        flex-direction: column;
+    }
+    div {
+        display: inline-block;
+        text-align: center;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    img {
+        max-width: 95%;
+        /* max-height: 95%; */
+    }
+
+}
